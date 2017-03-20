@@ -1,0 +1,6 @@
+gcc  -shared -fPIC inspect_open.c -o inspect_open.so -ldl
+
+gcc test_open.c -o test_open
+
+LD_PRELOAD=./inspect_open.so ./test_open
+
